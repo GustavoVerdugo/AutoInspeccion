@@ -1,0 +1,46 @@
+<Page class="page-home" loaded="pageLoaded" 
+    xmlns:Card="@nstudio/nativescript-cardview" 
+    xmlns:bottomNav="nativescript-bottom-navigation" 
+    xmlns:Gradient="nativescript-gradient" 
+    xmlns="http://schemas.nativescript.org/tns.xsd">
+
+    <ActionBar title="AutoInspección" android.iconVisibility="collapse">
+        <StackLayout orientation="horizontal" ios:horizontalAlignment="center" android:horizontalAlignment="center">
+            <Image src="~/assets/images/logo-action.png" class="action-image"></Image>
+        </StackLayout>
+        <ActionBar.actionItems>
+            <ActionItem ios.position="right" marginRight="10">
+                <ActionItem.actionView>
+                    <StackLayout marginRight="5">
+                        <Label class="icono-action fa ab-icon" marginRight="20" text="&#xF0A2;" fontSize="20" tap="onNotifications"></Label>
+                    </StackLayout>
+                </ActionItem.actionView>
+            </ActionItem>
+            <ActionItem ios.position="right">
+                <ActionItem.actionView>
+                    <StackLayout marginRight="5">
+                        <Label class="icono-action fa ab-icon" marginRight="20" text="&#xf0c9;" fontSize="20" tap="onDrawerButtonTap"></Label>
+                    </StackLayout>
+                </ActionItem.actionView>
+            </ActionItem>
+        </ActionBar.actionItems>
+    </ActionBar>
+    <GridLayout rows="*, auto">
+        <ScrollView height="auto" orientation="vertical" isEnabled="true" id="myScroller">
+            <StackLayout class="list-group-item">
+                <Card:CardView class="cardStyle" elevation="40" radius="5">
+                    <GridLayout rows="*, *" columns="*">
+                        <Gradient:Gradient row="0" col="0" class="top-head" direction="to right" colors="#009792, #10bdba, #27d3d0">
+                            <Label class="label" text="Inspección"/>
+                        </Gradient:Gradient>
+                        <GridLayout columns="auto,*" class="list-group-item-content" row="1" col="0">
+                            <StackLayout col="0" verticalAlignment="center" class="list-group-item-text border-right">
+                                <Button class="btn btn-inspeccion" text="Iniciar Inspección" tap="{{ onInspeccion }}" />
+                            </StackLayout>
+                        </GridLayout>
+                    </GridLayout>
+                </Card:CardView>
+            </StackLayout>
+        </ScrollView>
+    </GridLayout>
+</Page>

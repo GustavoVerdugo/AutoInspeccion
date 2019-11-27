@@ -1,0 +1,62 @@
+<nsDrawer:RadSideDrawer id="sideDrawer" drawerLocation="Right" 
+    xmlns:nsDrawer="nativescript-ui-sidedrawer" loaded="onLoaded">
+    <nsDrawer:RadSideDrawer.drawerTransition>
+        <nsDrawer:SlideInOnTopTransition/>
+    </nsDrawer:RadSideDrawer.drawerTransition>
+
+    <nsDrawer:RadSideDrawer.drawerContent>
+        <GridLayout class="page" rows="auto, *">
+            <GridLayout rows="auto, auto, auto" row="0" class="care-common-main-header">
+                <Label row="0" col="0" colSpan="2" class="fa connect-team-avatar text-center m-b-15 h2 m-x-auto p-10" text="&#xF007;"></Label>
+                <Label row="1" col="0" class="h3 text-center" text="{{loginModel.nombreCompleto}}"></Label>
+                <!--Label row="2" col="0" width="20%" text="&#xf090;" class="text-salir fa text-muted"></Label-->
+                <Label row="2" route="/login/login-page" title="Salir" tap="onNavigationItemTap" col="0" width="80%" text="Cerrar Sesión" class="text text-salir"></Label>
+            </GridLayout>
+            <ScrollView row="1">
+                <StackLayout>
+                    <!-- NOTE: use *ngFor directive only if visualizing a known small number of items; 
+                otherwise consider using ListView that supports virtualization -->
+                    <StackLayout>
+                        <Label text="Configuraciones" class="care-common-list-header"></Label>
+                    </StackLayout>
+                    <GridLayout rows="auto, auto, auto, auto, auto, auto" columns="40, *, auto" class="side-menu">
+                        <Label row="0" col="0" class="fa" marginTop="2" text="&#xF084;"></Label>
+                        <Label row="0" col="1" text="Cambio de clave" class="text"></Label>
+                        <Label row="0" col="2" text="&#xf105;" class="fa text-muted"></Label>
+                        <StackLayout row="1" colSpan="3" class="hr-sidebar"></StackLayout>
+                        <Label row="2" col="0" text="&#xF023;" marginTop="2" class="fa"></Label>
+                        <Label row="2" col="1" text="Ajuste touch id" class="text"></Label>
+                        <Label row="2" col="2" text="&#xf105;" class="fa text-muted"></Label>
+                        <StackLayout row="3" colSpan="3" class="hr-sidebar"></StackLayout>
+                        <Label row="4" col="0" text="&#xF023;"  marginTop="2" class="fa"></Label>
+                        <Label row="4" col="1" text="Privacidad" class="text"></Label>
+                        <Label row="4" col="2" text="&#xf105;" class="fa text-muted"></Label>
+                        <StackLayout row="5" colSpan="3" class="hr-sidebar"></StackLayout>
+                    </GridLayout>
+
+                    <StackLayout>
+                        <Label text="Acera de" class="care-common-list-header"></Label>
+                    </StackLayout>
+                    <GridLayout rows="auto, auto, auto, auto, auto, auto" columns="40, *, auto" class="side-menu">
+                        <Label row="0" col="0" class="fa" marginTop="2" text="&#xF059;"></Label>
+                        <Label row="0" col="1" text="Ayuda" class="text"></Label>
+                        <Label row="0" col="2" text="&#xf105;" class="fa text-muted"></Label>
+                        <StackLayout row="1" colSpan="3" class="hr-sidebar"></StackLayout>
+                        <Label row="2" col="0" text="&#xF109;" marginTop="2" class="fa"></Label>
+                        <Label row="2" col="1" text="www.consalud.cl" class="text"></Label>
+                        <Label row="2" col="2" text="&#xf105;" class="fa text-muted"></Label>
+                        <StackLayout row="3" colSpan="3" class="hr-sidebar"></StackLayout>
+                        <Label row="4" col="0" text="&#xF0E6;" marginTop="2" class="fa"></Label>
+                        <Label row="4" col="1" text="Acerca de" class="text"></Label>
+                        <Label row="4" col="2" text="&#xf105;" class="fa text-muted"></Label>
+                        <StackLayout row="5" colSpan="3" class="hr-sidebar"></StackLayout>
+                    </GridLayout>
+                </StackLayout>
+            </ScrollView>
+        </GridLayout>
+    </nsDrawer:RadSideDrawer.drawerContent>
+
+    <nsDrawer:RadSideDrawer.mainContent>
+        <Frame defaultPage="/login/login-page" id="topmost"></Frame>
+    </nsDrawer:RadSideDrawer.mainContent>
+</nsDrawer:RadSideDrawer>

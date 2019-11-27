@@ -1,0 +1,12 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded" class="page"
+    xmlns:Cam="@nstudio/nativescript-camera-plus" actionBarHidden="true">
+    <ScrollView orientation="vertical">
+        <StackLayout>
+            <Cam:CameraPlus height="{{ cameraHeight }}" id="camPlus" loaded="camLoaded" galleryPickerMode="multiple" 
+            enableVideo="true" confirmVideo="false" saveToGallery="true" showCaptureIcon="true" showGalleryIcon="true" 
+            showToggleIcon="true" showFlashIcon="true" confirmPhotos="true" flashOffIcon="icon" autoSquareCrop="true" 
+            insetButtons="true" insetButtonsPercent="0.02" imagesSelectedEvent="{{ imagesSelectedBinding }}" debug="true">
+            </Cam:CameraPlus>
+        </StackLayout>
+    </ScrollView>
+</Page>
